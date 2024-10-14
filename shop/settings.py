@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-i7tysk!b*_efyvnzexo+1kc^=9g+=%k-nwm63*9+@byjr3^s(d
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+
 
 
 # Application definition
@@ -42,9 +42,24 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'api',
 ]
-ALLOWED_HOSTS = ["*"]
-CORS_ALLOW_ALL_ORIGINS = True
 
+ALLOWED_HOSTS = [
+    '127.0.0.1',               # Localhost
+    'localhost',               # Localhost
+    'softs-venture.onrender.com',
+]
+# CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOWED_ORIGINS = [
+    'http://127.0.0.1:8000',   # Localhost
+    'http://localhost:8000',   # Localhost
+    'https://softs-venture.onrender.com',
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    'http://127.0.0.1:8000',
+    'http://localhost:8000',
+    'https://softs-venture.onrender.com',
+]
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
